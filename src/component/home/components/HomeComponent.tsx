@@ -5,7 +5,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import { ContentModal } from "../../shared/components/Modal";
 import { getProductListData } from "../home.action";
-import { setModalData } from "../home.slice";
+import { setCartData, setModalData } from "../home.slice";
 import "./style.scss";
 
 const HomeComponent = () => {
@@ -41,11 +41,10 @@ const HomeComponent = () => {
       return "hurry! only a few items left";
     }
   };
-  const history = useHistory();
   const addToCart = (key: number) => {
     console.log(key);
     setIsProfileOpen(false);
-    history.push("./product-cart");
+    dispatch(setCartData(filterValue(demoData, "id", key)));
   };
   return (
     <div className="home">
@@ -67,14 +66,14 @@ const HomeComponent = () => {
             </div>
           ) : (
             <div className="productLising">
-              {productList?.map((val: any) => {
+              {productList?.map((val: any, index: number) => {
                 return (
-                  <div style={{ background: "#FAF8F1" }}>
+                  <div style={{ background: "#FAF8F1" }} key={index}>
                     <div className="category">{val.props.value}</div>
                     <div className="productCard">
-                      {val.props.children?.map((val: any) => {
+                      {val.props.children?.map((val: any, index: number) => {
                         return (
-                          <div className="description" onClick={() => showModal(val.id)}>
+                          <div className="description" key={index} onClick={() => showModal(val.id)}>
                             <div className="image">
                               <img src={val.thumbnail} alt="prodImg" />
                             </div>

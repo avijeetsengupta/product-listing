@@ -1,3 +1,4 @@
+import { StatArrow } from "@chakra-ui/react";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -6,6 +7,7 @@ const initialState = {
   productFilter: [],
   isActive: false,
   modalData: [],
+  cartData: [],
 };
 
 export const productListingSlice = createSlice({
@@ -27,10 +29,13 @@ export const productListingSlice = createSlice({
     setModalData: (state, action: PayloadAction<any>) => {
       state.modalData = action.payload;
     },
+    setCartData: (state, action: PayloadAction<any>) => {
+      state.cartData = action.payload;
+    },
   },
 });
 
-export const { setProductData, setIsloading, setFilterProduct, setIsActive, setModalData } =
+export const { setProductData, setIsloading, setFilterProduct, setIsActive, setModalData, setCartData } =
   productListingSlice.actions;
 
 export default productListingSlice.reducer;

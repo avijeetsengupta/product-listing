@@ -1,7 +1,13 @@
 import React from "react";
+import { useAppSelector } from "../redux/hooks";
+import { RootState } from "../redux/store";
 
 const ProductCartComponent = () => {
-  return <div>ProductCartComponent</div>;
+  const cartData: any = useAppSelector((state: RootState) => state.product.cartData);
+
+  console.log(cartData);
+
+  return <div></div>;
 };
 
 export default ProductCartComponent;
