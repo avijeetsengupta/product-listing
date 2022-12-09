@@ -44,7 +44,6 @@ const HomeComponent = () => {
     console.log(key);
     setIsProfileOpen(false);
   };
-  console.log(modalData);
   return (
     <div className="home">
       {isLoading ? (

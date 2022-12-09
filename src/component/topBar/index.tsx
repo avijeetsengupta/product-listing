@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { setFilterProduct, setIsActive } from "../home/home.slice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
@@ -61,7 +60,13 @@ const TopBarComponent = () => {
       <div onClick={() => history.push("/product-home")}>Product page</div>
       <div className="menuBar">
         <span className="searchArea">
-          <input type={"text"} className="searchBox" onChange={onChange} autoFocus />
+          <input
+            type={"text"}
+            placeholder={"search category, brand."}
+            className="searchBox"
+            onChange={onChange}
+            autoFocus
+          />
         </span>
         <AiOutlineShoppingCart width={"1.5rem"} height={"1.5rem"} color={"black"} />
         <div className="addProd">0</div>
