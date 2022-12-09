@@ -68,7 +68,14 @@ const TopBarComponent = () => {
             autoFocus
           />
         </span>
-        <AiOutlineShoppingCart width={"1.5rem"} height={"1.5rem"} color={"black"} />
+        <div className="cart">
+          <AiOutlineShoppingCart
+            width={"1.5rem"}
+            height={"1.5rem"}
+            color={"black"}
+            onClick={() => history.push("/product-cart")}
+          />
+        </div>
         <div className="addProd">0</div>
       </div>
     </div>

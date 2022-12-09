@@ -1,15 +1,16 @@
-import React, { lazy, Suspense } from "react";
+import { lazy, Suspense } from "react";
 import { Route, BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
-import ProductComponent from "./component/product";
-import Spinner from "./component/shared/Spinner";
+import FooterComponent from "./component/footer";
 import TopBarComponent from "./component/topBar";
-const HomeComponent = lazy(() => import("./component/home/components"));
-const NotFound = lazy(() => import("./component/notFound"));
+import Spinner from "./component/shared/Spinner";
+const HomeComponent = lazy(() => import("./component/home/components/index"));
+const ProductCartComponent = lazy(() => import("./component/productCart/ProductCartComponent"));
+const NotFound = lazy(() => import("./component/notFound/NotFound"));
 
 export const ProductRoutes = () => {
   return (
     <>
-      <Router basename="product">
+      <Router>
         <div style={{ height: "4rem", background: "red" }}>
           <TopBarComponent />
         </div>
@@ -19,13 +20,15 @@ export const ProductRoutes = () => {
               <Switch>
                 <Route exact={true} path="/" render={() => <Redirect to="/product-home" />} />
                 <Route exact={true} path="/product-home" component={HomeComponent} />
+
+                <Route exact={true} path="/product-cart" component={ProductCartComponent} />
                 <Route component={NotFound} />
               </Switch>
             </>
           </Suspense>
         </div>
         <div style={{ height: "4rem" }}>
-          <ProductComponent />
+          <FooterComponent />
         </div>
       </Router>
     </>

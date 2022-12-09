@@ -1,8 +1,7 @@
 import { Box, Flex } from "@chakra-ui/react";
-import React from "react";
 import "./index.scss";
 
-const ProductComponent = () => {
+const FooterComponent = () => {
   return (
     <>
       <Flex
@@ -31,4 +30,4 @@ const ProductComponent = () => {
   );
 };
 
-export default ProductComponent;
+export default FooterComponent;
