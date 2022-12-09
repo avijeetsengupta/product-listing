@@ -1,5 +1,6 @@
 import { Button } from "@chakra-ui/react";
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import { ContentModal } from "../../shared/components/Modal";
@@ -40,9 +41,11 @@ const HomeComponent = () => {
       return "hurry! only a few items left";
     }
   };
+  const history = useHistory();
   const addToCart = (key: number) => {
     console.log(key);
     setIsProfileOpen(false);
+    history.push("./product-cart");
   };
   return (
     <div className="home">

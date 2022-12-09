@@ -54,10 +54,16 @@ const TopBarComponent = () => {
       dispatch(setFilterProduct([]));
     }
   };
+  const handleProd = () => {
+    history.push("./product-home");
+  };
+  const handleCart = () => {
+    history.push("./product-cart");
+  };
 
   return (
     <div className="topbar">
-      <div onClick={() => history.push("/product-home")}>Product page</div>
+      <div onClick={handleProd}>Product page</div>
       <div className="menuBar">
         <span className="searchArea">
           <input
@@ -68,7 +74,7 @@ const TopBarComponent = () => {
             autoFocus
           />
         </span>
-        <div className="cart" onClick={() => history.push("/product-cart")}>
+        <div className="cart" onClick={handleCart}>
           <AiOutlineShoppingCart width={"1.5rem"} height={"1.5rem"} color={"black"} />
         </div>
         <div className="addProd">0</div>
