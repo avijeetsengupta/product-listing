@@ -4,7 +4,7 @@ import ProductComponent from "./component/product";
 import Spinner from "./component/shared/Spinner";
 import TopBarComponent from "./component/topBar";
 const HomeComponent = lazy(() => import("./component/home/components"));
-const NotFound = lazy(() => import("./component/product"));
+const NotFound = lazy(() => import("./component/notFound"));
 
 export const ProductRoutes = () => {
   return (
