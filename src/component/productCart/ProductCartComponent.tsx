@@ -1,5 +1,4 @@
-import React from "react";
-import { setCount } from "../home/home.slice";
+import { setCartData, setCount } from "../home/home.slice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { RootState } from "../redux/store";
 
@@ -7,6 +6,7 @@ const ProductCartComponent = () => {
   const cartData: any = useAppSelector((state: RootState) => state.product.cartData);
   const dispatch = useAppDispatch();
   const emptyCart = () => {
+    dispatch(setCartData([]));
     dispatch(setCount(0));
   };
   return (
@@ -18,7 +18,9 @@ const ProductCartComponent = () => {
           </div>
           <div>{cartData.title}</div>
           <div>{cartData.price}</div>
-          <div onClick={emptyCart}>Empty the Card ?</div>
+          <div onClick={emptyCart} className={"emptyBtn"}>
+            Empty the Card ?
+          </div>
         </div>
       ) : (
         <>Cart Empty</>
