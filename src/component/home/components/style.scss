@@ -27,18 +27,6 @@
       right: 0;
       bottom: 0;
     }
-    .prodModal {
-      display: flex;
-      z-index: 10;
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
-      background: white;
-      width: 30rem;
-      height: 30rem;
-      border-radius: 4px;
-      margin-top: 20px;
-    }
   }
 }
 .productLising {
@@ -96,4 +84,10 @@
   justify-content: center;
   color: aliceblue;
   margin-top: 10%;
+}
+.prodModal {
+  display: flex;
+  gap: 1rem;
+  border-radius: 4px;
+  margin-top: 20px;
 }
