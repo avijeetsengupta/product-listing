@@ -1,0 +1,39 @@
+.topbar {
+  height: 4rem;
+  background: blanchedalmond;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  justify-content: space-between;
+}
+.searchBox {
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: #fff;
+  padding-right: 1rem;
+  font-size: 16px;
+  border: 1px solid #98a29d;
+  border-radius: 2px;
+  &:focus {
+    outline: none;
+  }
+}
+.menuBar {
+  display: flex;
+  gap: 4rem;
+  position: relative;
+  align-items: center;
+  .searchArea {
+    margin-bottom: 10px;
+  }
+  .addProd {
+    position: absolute;
+    right: 9px;
+    top: 18px;
+    color: #000;
+    font-size: 11px;
+    font-weight: 700;
+  }
+}
