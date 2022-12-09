@@ -93,7 +93,7 @@ const HomeComponent = () => {
       ) : (
         <>
           <div onClick={handleProduct} className="click">
-            Click me
+            Shop Products
           </div>
         </>
       )}

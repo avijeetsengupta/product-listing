@@ -4,6 +4,7 @@ import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { RootState } from "../redux/store";
 import "./style.scss";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FiSearch } from "react-icons/fi";
 
 const TopBarComponent = () => {
   const demoData = useAppSelector((state: RootState) => state.product.productdata);
@@ -66,6 +67,9 @@ const TopBarComponent = () => {
     <div className="topbar">
       <div onClick={handleProd}>Product page</div>
       <div className="menuBar">
+        <div>
+          <FiSearch />
+        </div>
         <span className="searchArea">
           <input
             type={"text"}
