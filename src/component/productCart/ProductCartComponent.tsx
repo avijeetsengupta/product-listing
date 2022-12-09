@@ -7,7 +7,15 @@ const ProductCartComponent = () => {
 
   console.log(cartData);
 
-  return <div></div>;
+  return (
+    <div className="prodCard">
+      <div>
+        <img src={cartData.thumbnail} alt="img" />
+      </div>
+      <div>{cartData.title}</div>
+      <div>{cartData.price}</div>
+    </div>
+  );
 };
 
 export default ProductCartComponent;
