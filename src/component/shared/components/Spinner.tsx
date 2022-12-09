@@ -1,4 +1,3 @@
-import React from "react";
 import { Flex, CircularProgress } from "@chakra-ui/react";
 
 interface ISpinnerProps {
@@ -8,12 +7,11 @@ interface ISpinnerProps {
 const Spinner: React.FC<ISpinnerProps> = ({ isInner = false }: ISpinnerProps) => {
   if (isInner) {
     return (
-      <Flex>
+      <Flex h="60vh" w="full" justify="center" align="center">
         <CircularProgress isIndeterminate={true} color="vidaPrimary.500" size="5rem" />
       </Flex>
     );
   }
-
   return (
     <Flex
       h="full"

@@ -16,6 +16,7 @@ const TopBarComponent = () => {
     }
     searchFilter(e.target.value, demoData);
   };
+  const history = useHistory();
   const searchFilter = (keyword: any, property: any) => {
     if (keyword.length > 0) {
       let result = property
@@ -53,7 +54,6 @@ const TopBarComponent = () => {
       dispatch(setFilterProduct([]));
     }
   };
-  const history = useHistory();
 
   return (
     <div className="topbar">
@@ -68,13 +68,8 @@ const TopBarComponent = () => {
             autoFocus
           />
         </span>
-        <div className="cart">
-          <AiOutlineShoppingCart
-            width={"1.5rem"}
-            height={"1.5rem"}
-            color={"black"}
-            onClick={() => history.push("/product-cart")}
-          />
+        <div className="cart" onClick={() => history.push("/product-cart")}>
+          <AiOutlineShoppingCart width={"1.5rem"} height={"1.5rem"} color={"black"} />
         </div>
         <div className="addProd">0</div>
       </div>

@@ -1,5 +1,4 @@
 import { Box, Flex } from "@chakra-ui/react";
-import "./index.scss";
 
 const FooterComponent = () => {
   return (

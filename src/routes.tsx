@@ -1,11 +1,11 @@
 import { lazy, Suspense } from "react";
 import { Route, BrowserRouter as Router, Switch, Redirect } from "react-router-dom";
-import FooterComponent from "./component/footer";
-import TopBarComponent from "./component/topBar";
-import Spinner from "./component/shared/Spinner";
-const HomeComponent = lazy(() => import("./component/home/components/index"));
+import FooterComponent from "./component/shared/components/FooterComponent";
+import TopBarComponent from "./component/topBar/TopBarComponent";
+// import Spinner from "./component/shared/components/Spinner";
+const HomeComponent = lazy(() => import("./component/home/components/HomeComponent"));
 const ProductCartComponent = lazy(() => import("./component/productCart/ProductCartComponent"));
-const NotFound = lazy(() => import("./component/notFound/NotFound"));
+const NotFound = lazy(() => import("./component/shared/components/NotFound"));
 
 export const ProductRoutes = () => {
   return (
@@ -15,7 +15,7 @@ export const ProductRoutes = () => {
           <TopBarComponent />
         </div>
         <div style={{ height: "calc(100vh - 8rem)", overflow: "scroll" }}>
-          <Suspense fallback={<Spinner />}>
+          <Suspense>
             <>
               <Switch>
                 <Route exact={true} path="/" render={() => <Redirect to="/product-home" />} />
