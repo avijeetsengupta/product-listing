@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 const initialState = {
   productdata: [],
   isLoading: false,
+  isCart: false,
   productFilter: [],
   isActive: false,
   modalData: [],
@@ -19,6 +20,9 @@ export const productListingSlice = createSlice({
     },
     setIsloading: (state, action: PayloadAction<boolean>) => {
       state.isLoading = action.payload;
+    },
+    setIsCart: (state, action: PayloadAction<boolean>) => {
+      state.isCart = action.payload;
     },
     setFilterProduct: (state, action: PayloadAction<any>) => {
       state.productFilter = action.payload;
@@ -38,7 +42,15 @@ export const productListingSlice = createSlice({
   },
 });
 
-export const { setProductData, setIsloading, setFilterProduct, setIsActive, setModalData, setCartData, setCount } =
-  productListingSlice.actions;
+export const {
+  setProductData,
+  setIsloading,
+  setFilterProduct,
+  setIsActive,
+  setModalData,
+  setCartData,
+  setCount,
+  setIsCart,
+} = productListingSlice.actions;
 
 export default productListingSlice.reducer;

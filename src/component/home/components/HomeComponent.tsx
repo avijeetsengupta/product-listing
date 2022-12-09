@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import { ContentModal } from "../../shared/components/Modal";
 import { getProductListData } from "../home.action";
-import { setCartData, setCount, setModalData } from "../home.slice";
+import { setCartData, setCount, setIsCart, setModalData } from "../home.slice";
 import "./style.scss";
 
 const HomeComponent = () => {
@@ -43,6 +43,7 @@ const HomeComponent = () => {
   };
   const addToCart = (key: number) => {
     setIsProfileOpen(false);
+    dispatch(setIsCart(true));
     dispatch(setCartData(filterValue(demoData, "id", key)));
     dispatch(setCount(count + 1));
   };

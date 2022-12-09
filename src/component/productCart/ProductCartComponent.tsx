@@ -4,6 +4,7 @@ import { RootState } from "../redux/store";
 
 const ProductCartComponent = () => {
   const cartData: any = useAppSelector((state: RootState) => state.product.cartData);
+  const isCart: boolean = useAppSelector((state: RootState) => state.product.isCart);
   const dispatch = useAppDispatch();
   const emptyCart = () => {
     dispatch(setCartData([]));
@@ -11,7 +12,7 @@ const ProductCartComponent = () => {
   };
   return (
     <>
-      {cartData ? (
+      {isCart ? (
         <div className="prodCard">
           <div>
             <img src={cartData.thumbnail} alt="img" />
