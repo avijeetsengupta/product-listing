@@ -7,6 +7,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 
 const TopBarComponent = () => {
   const demoData = useAppSelector((state: RootState) => state.product.productdata);
+  const count = useAppSelector((state: RootState) => state.product.count);
   const dispatch = useAppDispatch();
   const onChange = (e: any) => {
     if (e.target.value.length > 0) {
@@ -77,7 +78,7 @@ const TopBarComponent = () => {
         <div className="cart" onClick={handleCart}>
           <AiOutlineShoppingCart width={"1.5rem"} height={"1.5rem"} color={"black"} />
         </div>
-        <div className="addProd">0</div>
+        <div className="addProd">{count}</div>
       </div>
     </div>
   );

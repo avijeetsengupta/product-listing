@@ -8,6 +8,7 @@ const initialState = {
   isActive: false,
   modalData: [],
   cartData: [],
+  count: 0,
 };
 
 export const productListingSlice = createSlice({
@@ -32,10 +33,13 @@ export const productListingSlice = createSlice({
     setCartData: (state, action: PayloadAction<any>) => {
       state.cartData = action.payload;
     },
+    setCount: (state, action: PayloadAction<any>) => {
+      state.count = action.payload;
+    },
   },
 });
 
-export const { setProductData, setIsloading, setFilterProduct, setIsActive, setModalData, setCartData } =
+export const { setProductData, setIsloading, setFilterProduct, setIsActive, setModalData, setCartData, setCount } =
   productListingSlice.actions;
 
 export default productListingSlice.reducer;

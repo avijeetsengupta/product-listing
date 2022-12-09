@@ -1,15 +1,15 @@
 import { Button } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import { ContentModal } from "../../shared/components/Modal";
 import { getProductListData } from "../home.action";
-import { setCartData, setModalData } from "../home.slice";
+import { setCartData, setCount, setModalData } from "../home.slice";
 import "./style.scss";
 
 const HomeComponent = () => {
   const demoData: any = useAppSelector((state: RootState) => state.product.productdata);
+  const count = useAppSelector((state: RootState) => state.product.count);
   const modalData: any = useAppSelector((state: RootState) => state.product.modalData);
   const isLoading: boolean = useAppSelector((state: RootState) => state.product.isLoading);
   const [isProfileOpen, setIsProfileOpen] = useState<boolean>(false);
@@ -42,9 +42,9 @@ const HomeComponent = () => {
     }
   };
   const addToCart = (key: number) => {
-    console.log(key);
     setIsProfileOpen(false);
     dispatch(setCartData(filterValue(demoData, "id", key)));
+    dispatch(setCount(count + 1));
   };
   return (
     <div className="home">
