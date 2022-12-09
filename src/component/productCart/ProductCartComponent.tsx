@@ -1,6 +1,7 @@
 import { setCartData, setCount } from "../home/home.slice";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
 import { RootState } from "../redux/store";
+import "./style.scss";
 
 const ProductCartComponent = () => {
   const cartData: any = useAppSelector((state: RootState) => state.product.cartData);
@@ -24,7 +25,7 @@ const ProductCartComponent = () => {
           </div>
         </div>
       ) : (
-        <>Cart Empty</>
+        <div className="empty">Cart Empty</div>
       )}
     </>
   );
